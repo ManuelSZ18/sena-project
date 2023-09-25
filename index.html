@@ -14,11 +14,94 @@
         </div>
         <div class="menu">
             <ul>
-                <li><a href="1Q">Problema 1</a></li>
-                <li><a href="2Q">Problema 2</a></li>
-                <li><a href="3Q">Problema 3</a></li>
-                <li><a href="3Q">Problema 4</a></li>
+                <li><a href="Q1">Problema 1</a></li>
+                <li><a href="Q2">Problema 2</a></li>
+                <li><a href="Q3">Problema 3</a></li>
+                <li><a href="Q4">Problema 4</a></li>
             </ul>
         </div>
-</body>
+    </menu> 
+    <div class="container">
+        <section id="Q1">
+            <h1>Problema 1</h1>
+            <p>
+                1. Desarrollar un programa que permita calcular el área o perímetro de algunas figuras planas según la 
+                siguiente tabla:
+            </p>
+            <table>
+                <tr>
+                    <th>Figura</th>
+                    <th>Medidas</th>
+                    <th>Formula Perímetro</th>
+                    <th>Perímetro</th>
+                    <th>Formula Área</th>
+                    <th>Área</th>
+                </tr>
+                <tr>
+                    <td>Triangulo</td>
+                    <td>
+                        <input type="number" name="ladoA" id="ladoA" placeholder="Lado A">
+                        <input type="number" name="ladoB" id="ladoB" placeholder="Lado B">
+                        <input type="number" name="ladoC" id="ladoC" placeholder="Lado C">
+                        <input type="number" name="Altura" id="altura" placeholder="Altura">
+                        <button id="button" onclick="click">Calcular</button>
+                    </td>
+                    <td>A + B + C</td>
+                    <td id="resultadoTrianguloPerimetro">
+                        <h4 id="perimetro">0</h4>
+                    </td>
+                    <td>(Base * Altura) / 2</td>
+                    <td id="resultadoTrianguloArea">
+                        <h4 id="area">0</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Rectangulo</td>
+                    <td>
+                        <input type="number" name="ladoA" id="ladoA" placeholder="Lado A">
+                        <input type="number" name="ladoB" id="ladoB" placeholder="Lado B">
+                        <button onclick="calcularRectangulo()">Calcular</button>
+                    </td>
+                    <td>2 (A + B)</td>
+                    <td id="resultadoRectanguloPerimetro"></td>
+                    <td>Base * Altura</td>
+                    <td id="resultadoRectanguloArea"></td>
+                </tr>
+                <tr>
+                    <td>Cuadrado</td>
+                    <td>
+                        <input type="number" name="ladoA" id="ladoA" placeholder="Lado A">
+                        <input type="number" name="ladoB" id="ladoB" placeholder="Lado B">
+                        <button onclick="calcularCuadrado()">Calcular</button>
+                    </td>
+                    <td>4 * A</td>
+                    <td id="resultadoCuadradoPerimetro"></td>
+                    <td>A²</td>
+                    <td id="resultadoCuadradoArea"></td>
+                </tr>
+                <tr>
+                    <td>Círculo</td>
+                    <td>
+                        <input type="number" name="ladoA" id="ladoA" placeholder="Lado A">
+                        <input type="number" name="ladoB" id="ladoB" placeholder="Lado B">
+                        <button onclick="calcularCirculo()">Calcular</button>
+                    </td>
+                    <td>2 * π * r²</td>
+                    <td id="resultadoCirculoPerimetro"></td>
+                    <td>π * r²</td>
+                    <td id="resultadoCirculoArea"></td>
+                </tr>
+                
+            </table>
+        </section>
+        <section id="Q2">
+            <h1>Problema 2</h1>
+        </section>
+        <section id="Q3">
+            <h1>Problema 3</h1>
+        </section>
+        <section id="Q4">
+            <h1>Problema 4</h1>
+        </section>
+    </div>
 </html>
