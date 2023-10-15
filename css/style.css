@@ -41,6 +41,7 @@ menu ul{
 
 menu ul li{
     list-style: none;
+    width: 120px;
 }
 
 menu ul li a{
@@ -85,12 +86,10 @@ h1{
     padding: 0;
 }
 
-p{
+h4{
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
     margin: 0;
-    margin-top: 15px;
-    margin-bottom: 30px;
     padding: 0;
 }
 
@@ -116,4 +115,37 @@ td {
     font-weight: 400;
     padding: 10px;
     border: 1px solid #000000;
+    background-color: #dddddd;
+
+}
+
+#Q2 table{
+    margin: 0 auto;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#agregarEdades{
+    margin: 10px;
+    padding: 10px;
+    background-color: #97eb97;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    border: 1px double #000000;
+}
+
+#calcularValores{
+    margin: 10px;
+    padding: 10px;
+    background-color: #ebd197;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    border: 1px double #000000;
+}
+
+#limpiarEdades{
+    margin: 10px;
+    padding: 10px;
+    background-color: #eb9797;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    border: 1px double #000000;
 }

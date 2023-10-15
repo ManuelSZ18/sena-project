@@ -40,65 +40,151 @@
                 <tr>
                     <td>Triangulo</td>
                     <td>
-                        <input type="number" name="ladoA" id="ladoA" placeholder="Lado A">
-                        <input type="number" name="ladoB" id="ladoB" placeholder="Lado B">
-                        <input type="number" name="ladoC" id="ladoC" placeholder="Lado C">
-                        <input type="number" name="Altura" id="altura" placeholder="Altura">
-                        <button id="button" onclick="click">Calcular</button>
+                        <div>
+                            <label>Lado A: </label>
+                            <input type="number" name="ladoA" id="ladoATriangulo" placeholder="Lado A">
+                        </div>
+                        <div>
+                            <label>Lado B: </label>
+                            <input type="number" name="ladoB" id="ladoBTriangulo" placeholder="Lado B o Base">
+                        </div>
+                        <div>
+                            <label>Lado C: </label>
+                            <input type="number" name="ladoC" id="ladoCTriangulo" placeholder="Lado C">
+                        </div>
+                        <div>
+                            <label>Altura: </label>
+                            <input type="number" name="Altura" id="alturaTriangulo" placeholder="Altura">
+                        </div>
                     </td>
                     <td>A + B + C</td>
-                    <td id="resultadoTrianguloPerimetro">
-                        <h4 id="perimetro">0</h4>
+                    <td>
+                        <h4 id="perimetroTriangulo">0</h4>
                     </td>
                     <td>(Base * Altura) / 2</td>
-                    <td id="resultadoTrianguloArea">
-                        <h4 id="area">0</h4>
+                    <td>
+                        <h4 id="areaTriangulo">0</h4>
                     </td>
                 </tr>
                 <tr>
                     <td>Rectangulo</td>
                     <td>
-                        <input type="number" name="ladoA" id="ladoA" placeholder="Lado A">
-                        <input type="number" name="ladoB" id="ladoB" placeholder="Lado B">
-                        <button onclick="calcularRectangulo()">Calcular</button>
+                        <div>
+                            <label>Lado A: </label>
+                            <input type="number" name="ladoA" id="ladoARectangulo" placeholder="Lado A">
+                        </div>
+                        <div>
+                            <label>Lado B: </label>
+                            <input type="number" name="ladoB" id="ladoBRectangulo" placeholder="Lado B">
+                        </div>
                     </td>
                     <td>2 (A + B)</td>
-                    <td id="resultadoRectanguloPerimetro"></td>
+                    <td>
+                        <h4 id="perimetroRectangulo">0</h4>
+                    </td>                    
                     <td>Base * Altura</td>
-                    <td id="resultadoRectanguloArea"></td>
+                    <td>
+                        <h4 id="areaRectangulo">0</h4>
+                    </td>
                 </tr>
                 <tr>
                     <td>Cuadrado</td>
                     <td>
-                        <input type="number" name="ladoA" id="ladoA" placeholder="Lado A">
-                        <input type="number" name="ladoB" id="ladoB" placeholder="Lado B">
-                        <button onclick="calcularCuadrado()">Calcular</button>
+                        <div>
+                            <label>Lado A: </label>
+                            <input type="number" name="ladoA" id="ladoACuadrado" placeholder="Lado A">
+                        </div>
                     </td>
                     <td>4 * A</td>
-                    <td id="resultadoCuadradoPerimetro"></td>
+                    <td>
+                        <h4 id="perimetroCuadrado">0</h4>
+                    </td>
                     <td>A²</td>
-                    <td id="resultadoCuadradoArea"></td>
+                    <td>
+                        <h4 id="areaCuadrado">0</h4> 
+                    </td>
                 </tr>
                 <tr>
                     <td>Círculo</td>
                     <td>
-                        <input type="number" name="ladoA" id="ladoA" placeholder="Lado A">
-                        <input type="number" name="ladoB" id="ladoB" placeholder="Lado B">
-                        <button onclick="calcularCirculo()">Calcular</button>
+                        <div>
+                            <label>Radio: </label>
+                            <input type="number" name="ladoA" id="radioCirculo" placeholder="Radio">
+                        </div>
                     </td>
                     <td>2 * π * r²</td>
-                    <td id="resultadoCirculoPerimetro"></td>
+                    <td>
+                        <h4 id="perimetroCirculo">0</h4>
+                    </td>
                     <td>π * r²</td>
-                    <td id="resultadoCirculoArea"></td>
+                    <td>
+                        <h4 id="areaCirculo">0</h4>
+                    </td>
                 </tr>
                 
             </table>
         </section>
         <section id="Q2">
             <h1>Problema 2</h1>
+            <p>Desarrollar un programa que permita almacenar las edades de un grupo de 10 personas en un vector de
+                enteros y luego determine la cantidad de personas que son menores de edad, mayores de edad, cuántos
+                adultos mayores, la edad más baja, la edad más alta y el promedio de edades ingresadas. Para el ejercicio
+                anterior suponga que un adulto mayor debe tener una edad igual o superior a 60. Debe validar para cada
+                ingreso que los valores estén en un rango entre 1 y 120 años. En caso de error deberá notificar y solicitar
+                un nuevo valor.
+            </p>                   
+            <table class="tablaResultados">
+                <tr>
+                    <th colspan="7">Agregar Edad: 
+                        <input id="edad" type="number">
+                        <button id="agregarEdades" onclick="insertarEdades()">Agregar</button>
+                        <button id="calcularValores" onclick="calcularAdultosMayores(), calcularMenoresEdad(), calcularMayoresEdad(), calcularEdadBaja(), calcularEdadAlta(), calcularPromedioEdades()">Calcular Valores</button>
+                        <button id="limpiarEdades" onclick="limpiarEdades()">Limpiar Edades</button>
+                    </th>  
+                </tr>
+                <tr>
+                    <th>Edades Agregadas</th>
+                    <th>Menores de edad</th>
+                    <th>Mayores de edad</th>
+                    <th>Adultos mayores</th>
+                    <th>Edad más baja</th>
+                    <th>Edad más alta</th>
+                    <th>Promedio de edades</th>
+                </tr>
+                <tr>
+                    <td>
+                        <h4 id="edades">0</h4>
+                        
+                    </td>
+                    <td>
+                        <h4 id="menoresEdad">0</h4>
+                    </td>
+                    <td>
+                        <h4 id="mayoresEdad">0</h4>
+                    </td>
+                    <td>
+                        <h4 id="adultosMayores">0</h4>
+                    </td>
+                    <td>
+                        <h4 id="edadBaja">0</h4>
+                    </td>
+                    <td>
+                        <h4 id="edadAlta">0</h4>
+                    </td>
+                    <td>
+                        <h4 id="promedioEdades">0</h4>
+                    </td>
+                </tr>          
+            </table>            
+
         </section>
         <section id="Q3">
             <h1>Problema 3</h1>
+            <p>Escriba un programa que lea dos vectores de números enteros ordenados ascendentemente y luego
+                produzca la lista ordenada de la mezcla de los dos, por ejemplo, si los dos arreglos tienen los números 1
+                3 6 9 17 y 2 4 10 17, respectivamente, la lista de números en la pantalla debe ser 1 2 3 4 6 9 10 17 17.
+                Limite los vectores a un tamaño de 5 y debe validar en cada ingreso que realmente se estén ingresando
+                los datos de forma ascendente.</p>
         </section>
         <section id="Q4">
             <h1>Problema 4</h1>
