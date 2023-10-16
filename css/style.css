@@ -93,13 +93,6 @@ h4{
     padding: 0;
 }
 
-#Q1 table{
-    margin: 0 auto;
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-}
-
 th{
     color: #fff;
     background-color: #274666;
@@ -116,8 +109,15 @@ td {
     padding: 10px;
     border: 1px solid #000000;
     background-color: #dddddd;
-
 }
+
+#Q1 table{
+    margin: 0 auto;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
 
 #Q2 table{
     margin: 0 auto;
@@ -149,3 +149,68 @@ td {
     box-shadow: 0 1px 2px rgba(0,0,0,.1);
     border: 1px double #000000;
 }
+
+#Q3 table{
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#Q3 table span{
+    color: #f00;
+}
+
+#Q4 .containerMenu{
+    display: grid;
+    grid-template-columns: 1fr 4fr 4fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.menuSelection #agregarPersona{
+    margin-bottom: 30px;
+}
+
+form{
+    grid-column: 2/3;
+    grid-row: 1/3;
+    display: flex;
+    justify-content: top;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    border: 1px double #000000;
+}
+.menuRegistro #registrar{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 30px;
+}
+
+.menuConsulta{
+    grid-column: 2/3;
+    grid-row: 1/3;
+    display: none;
+    justify-content: top;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    border: 1px double #000000;
+}
+
+.menuRegistro{
+    display: none;
+}
+
+.menuRegistro #registrar{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 30px;
+}
+
