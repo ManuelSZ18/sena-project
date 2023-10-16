@@ -137,7 +137,7 @@
                     <th colspan="7">Agregar Edad: 
                         <input id="edad" type="number">
                         <button id="agregarEdades" onclick="insertarEdades()">Agregar</button>
-                        <button id="calcularValores" onclick="calcularAdultosMayores(), calcularMenoresEdad(), calcularMayoresEdad(), calcularEdadBaja(), calcularEdadAlta(), calcularPromedioEdades()">Calcular Valores</button>
+                        <button id="calcularResultados" onclick="calcularAdultosMayores(), calcularMenoresEdad(), calcularMayoresEdad(), calcularEdadBaja(), calcularEdadAlta(), calcularPromedioEdades()">Calcular Valores</button>
                         <button id="limpiarEdades" onclick="limpiarEdades()">Limpiar Edades</button>
                     </th>  
                 </tr>
@@ -222,47 +222,58 @@
                 mostrar un menú que permite las siguientes opciones:</p>
             <p>a. Agregar una persona con los datos que se listan anteriormente.</p>    
             <p>b. Mostrar la información personal de una persona particular por medio de su posición en el vector.</p>
-            <div class="containerMenu" id="containerMenu">
-                <div class="menuSelection">
-                    <button id="agregarPersona" onclick="agregarPersona()">Agregar Persona</button>
-                    <input id="personaRegistrada"type="text">
-                    <button id="mostrarPersona" onclick="consultarPersona()">¿Cual registro desea consultar?</button>
-                </div>
-                <form class="menuRegistro" id="menuRegistro">
-                    <label for="nombre">Nombre: </label>
-                    <input type="text" name="nombre" id="nombre" placeholder="Nombre">
-                    <label for="cedula">Cédula: </label>
-                    <input type="number" name="cedula" id="cedula" placeholder="Cédula">
-                    <label for="fechaNacimiento">Fecha de Nacimiento: </label>
-                    <input type="date" name="fechaNacimiento" id="fechaNacimiento" placeholder="Fecha de Nacimiento">
-                    <label for="correo">Correo: </label>
-                    <input type="email" name="correo" id="correo" placeholder="Correo">
-                    <label for="ciudadResidencia">Ciudad de Residencia: </label>
-                    <input type="text" name="ciudadResidencia" id="ciudadResidencia" placeholder="Ciudad de Residencia">
-                    <label for="ciudadOrigen">Ciudad de Origen: </label>
-                    <input type="text" name="ciudadOrigen" id="ciudadOrigen" placeholder="Ciudad de Origen">
-                    <label for="artista1">Artista 1: </label>
-                    <input type="text" name="artista1" id="artista1" placeholder="Artista 1">
-                    <label for="titulo1">Título 1: </label>
-                    <input type="text" name="titulo1" id="titulo1" placeholder="Título 1">
-                    <label for="titulo2">Título 2: </label>
-                    <input type="text" name="titulo2" id="titulo2" placeholder="Título 2">
-                    <label for="titulo3">Título 3: </label>
-                    <input type="text" name="titulo3" id="titulo3" placeholder="Título 3">
-                    <button id="registrar" onclick="insertarPersona()">Registrar</button>
-                </form>
-                <div class="menuConsulta" id="menuConsulta">
-                    <label for="nombreRegistrado">Nombre: <p id="nombrePersona"></p></label>
-                    <label for="cedulaRegistrada">Cédula: <p id="cedulaPersona"></p></label>
-                    <label for="fechaNacimientoRegistrada">Fecha de Nacimiento: <p id="fechaNacimientoPersona"></p></label>
-                    <label for="correoRegistrado">Correo: <p id="correoPersona"></p></label>
-                    <label for="ciudadResidenciaRegistrada">Ciudad de Residencia: <p id="ciudadResidenciaPersona"></p></label>
-                    <label for="ciudadOrigenRegistrada">Ciudad de Origen: <p id="ciudadOrigenPersona"></p></label>
-                    <label for="artista1Registrado">Artista 1: <p id="artista1Persona"></p></label>
-                    <label for="titulo1Registrado">Título 1: <p id="titulo1Persona"></p></label>
-                    <label for="titulo2Registrado">Título 2: <p id="titulo2Persona"></p></label>
-                    <label for="titulo3Registrado">Título 3: <p id="titulo3Persona"></p></label>
-                </div>
-            </div>
+            
+            <table class="tablaResultados">
+                </tr>
+                <tr>
+                    <th colspan="7">Consultar Registro: 
+                        <input id="posicion" type="text" placeholder="Posición">
+                        <button id="consultarPersona" onclick="consultarPersona()">Consultar Persona</button>
+                        <button id="limpiarPersona" onclick="limpiarRegistros()">Limpiar Registros</button>
+                        <p>Personas Registradas: <span id="personasRegistradas">0</span> </p>
+                    </th>  
+                </tr>
+                <tr>
+                    <th id="tituloEncabezado">Registrar Persona Entrevistadas</th>
+                    <th id="tituloEncabezado">Consulta de Personas Registradas</th>
+                </tr>
+                <tr>
+                    <td id="resgitroPersona">
+                        <label for="nombre">Nombre: </label>
+                        <input type="text" name="nombre" id="nombrePersona" placeholder="Nombre">
+                        <label for="cedula">Cédula: </label>
+                        <input type="number" name="cedula" id="cedulaPersona" placeholder="Cédula">
+                        <label for="fechaNacimiento">Fecha de Nacimiento: </label>
+                        <input type="date" name="fechaNacimiento" id="fechaNacimientoPersona" placeholder="Fecha de Nacimiento">
+                        <label for="correo">Correo: </label>
+                        <input type="email" name="correo" id="correoPersona" placeholder="Correo">
+                        <label for="ciudadResidencia">Ciudad de Residencia: </label>
+                        <input type="text" name="ciudadResidencia" id="ciudadResidenciaPersona" placeholder="Ciudad de Residencia">
+                        <label for="ciudadOrigen">Ciudad de Origen: </label>
+                        <input type="text" name="ciudadOrigen" id="ciudadOrigenPersona" placeholder="Ciudad de Origen">
+                        <label for="artista">Artista: </label>
+                        <input type="text" name="artista" id="artistaPersona" placeholder="Artista">
+                        <label for="tituloCancion1">Título de Canción 1: </label>
+                        <input type="text" name="tituloCancion1" id="tituloCancion1Persona" placeholder="Título de Canción 1">
+                        <label for="tituloCancion2">Título de Canción 2: </label>
+                        <input type="text" name="tituloCancion2" id="tituloCancion2Persona" placeholder="Título de Canción 2">
+                        <label for="tituloCancion3">Título de Canción 3: </label>
+                        <input type="text" name="tituloCancion3" id="tituloCancion3Persona" placeholder="Título de Canción 3">
+                        <button id="insertarPersona" onclick="insertarPersona()">Registrar</button>
+                    </td>
+                    <td id="consultaPersona">                        
+                        <h4>Nombre: <p id="consultaNombre"></p></h4>
+                        <h4>Cédula: <p id="consultaCedula"></p> </h4>
+                        <h4>Fecha de Nacimiento: <p id="consultaFechaNacimiento"></p></h4>
+                        <h4>Correo: <p id="consultaCorreo"></p></h4>
+                        <h4>Ciudad de Residencia: <p id="consultaCiudadResidencia"></p></h4>
+                        <h4>Ciudad de Origen: <p id="consultaCiudadOrigen"></p></h4>
+                        <h4>Artista: <p id="consultaArtista"></p></h4>
+                        <h4>Título de Canción 1: <p id="consultaTituloCancion1"></p></h4>
+                        <h4>Título de Canción 2: <p id="consultaTituloCancion2"></p></h4>
+                        <h4>Título de Canción 3: <p id="consultaTituloCancion3"></p></h4>
+                    </td>
+                </tr>
+            </table>
         </section>    
 </html>

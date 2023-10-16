@@ -231,83 +231,83 @@ function calcularMezcla(){
 }
 
 //PROBLEMA 4 <----------------------------------------------------------------------------------------------------------------------------->
-/*Una emisora con presencia en diferentes ciudades desea conocer el rating de canciones y cantantes más
-escuchados (sonados) en este semestre del año. Por lo tanto, se ha pedido a estudiantes del SENA del
-programa de tecnólogo en análisis y desarrollo de software desarrollar una solución que permita conocer
-la respuesta de 6 personas con relación a sus gustos musicales. Con fines administrativos y realizar una
-rifa entre las personas encuestadas, la emisora desea poder registrar de las personas entrevistadas su
-nombre, número de identificación (cédula), fecha de nacimiento, correo electrónico, ciudad de residencia,
-ciudad de origen. Además, se deberá poder almacenar el artista y título de hasta 3 canciones favoritas en
-cada una de las personas que se ingrese, teniendo en cuenta lo anterior, se sugiere que la solución deberá
-mostrar un menú que permite las siguientes opciones:
-
-a. Agregar una persona con los datos que se listan anteriormente.
-b. Mostrar la información personal de una persona particular por medio de su posición en el vector. */
-
-function agregarPersona(){
-    
-    if(document.getElementById('menuRegistro').style.display = 'none'){
-        document.getElementById('menuRegistro').style.display = 'flex';
-        document.getElementById('menuConsulta').style.display = 'none';
-    }else{
-        document.getElementById('menuRegistro').style.display = 'none';
-        document.getElementById('menuConsulta').style.display = 'none';
-    }
-
-    
-}
-
-function registrarPersona(){
-    let nombre = document.getElementById('nombre').value;
-    let cedula = document.getElementById('cedula').value;
-    let fechaNacimiento = document.getElementById('fechaNacimiento').value;
-    let correo = document.getElementById('correo').value;
-    let ciudadResidencia = document.getElementById('ciudadResidencia').value;
-    let ciudadOrigen = document.getElementById('ciudadOrigen').value;
-    let artista1 = document.getElementById('artista1').value;
-    let titulo1 = document.getElementById('titulo1').value;
-    let titulo2 = document.getElementById('titulo2').value;
-    let titulo3 = document.getElementById('titulo3').value; 
-    let persona = {
-        nombre: nombre,
-        cedula: cedula,
-        fechaNacimiento: fechaNacimiento,
-        correo: correo,
-        ciudadResidencia: ciudadResidencia,
-        ciudadOrigen: ciudadOrigen,
-        artista1: artista1,
-        titulo1: titulo1,
-        titulo2: titulo2,
-        titulo3: titulo3,
-    }
-    document.getElementById('menuRegistro').style.display = 'none';
-    return persona;  
-}
 
 let personas = [];
 
 function insertarPersona(){
-    let persona = registrarPersona();
+    agregarPersona();
+    document.getElementById('personasRegistradas').innerHTML = personas.length;
+}
+
+function agregarPersona(){
+    let nombre = document.getElementById('nombrePersona').value;
+    let cedula = document.getElementById('cedulaPersona').value;
+    let fechaNacimiento = document.getElementById('fechaNacimientoPersona').value;
+    let correo = document.getElementById('correoPersona').value;
+    let ciudadResidencia = document.getElementById('ciudadResidenciaPersona').value;
+    let ciudadOrigen = document.getElementById('ciudadOrigenPersona').value;
+    let artista = document.getElementById('artistaPersona').value;
+    let tituloCancion1 = document.getElementById('tituloCancion1Persona').value;
+    let tituloCancion2 = document.getElementById('tituloCancion2Persona').value;
+    let tituloCancion3 = document.getElementById('tituloCancion3Persona').value;
+    let persona = {
+        nombre,
+        cedula,
+        fechaNacimiento,
+        correo,
+        ciudadResidencia,
+        ciudadOrigen,
+        artista,
+        tituloCancion1,
+        tituloCancion2,
+        tituloCancion3
+    }
     if(personas.length < 6){
         personas.push(persona);
+        document.getElementById('nombrePersona').value = '';
+        document.getElementById('cedulaPersona').value = '';
+        document.getElementById('fechaNacimientoPersona').value = '';
+        document.getElementById('correoPersona').value = '';
+        document.getElementById('ciudadResidenciaPersona').value = '';
+        document.getElementById('ciudadOrigenPersona').value = '';
+        document.getElementById('artistaPersona').value = '';
+        document.getElementById('tituloCancion1Persona').value = '';
+        document.getElementById('tituloCancion2Persona').value = '';
+        document.getElementById('tituloCancion3Persona').value = '';
     }else{
         alert('No se pueden agregar más de 6 personas');
     }
 }
 
-function consultarPersona(){
-    alert(personas[0]);
-    document.getElementById('menuConsulta').style.display = 'flex';
-    let posicion = document.getElementById('personaRegistrada').value;
-    let persona = personas[posicion-1];
-    document.getElementById('nombrePersona').innerHTML = persona.nombre;
-    document.getElementById('cedulaPersona').innerHTML = persona.cedula;
-    document.getElementById('fechaNacimientoPersona').innerHTML = persona.fechaNacimiento;
-    document.getElementById('correoPersona').innerHTML = persona.correo;
-    document.getElementById('ciudadResidenciaPersona').innerHTML = persona.ciudadResidencia;
-    document.getElementById('ciudadOrigenPersona').innerHTML = persona.ciudadOrigen;
-    document.getElementById('artista1Persona').innerHTML = persona.artista1;
-    document.getElementById('titulo1Persona').innerHTML = persona.titulo1;
-    document.getElementById('titulo2Persona').innerHTML = persona.titulo2;
-    document.getElementById('titulo3Persona').innerHTML = persona.titulo3;
+function limpiarRegistros(){
+    personas = [];
+    document.getElementById('personasRegistradas').innerHTML = personas.length;
+    document.getElementById('posicion').value = '';
+    document.getElementById('consultaNombre').value = '';
+    document.getElementById('consultaCedula').value = '';
+    document.getElementById('consultaFechaNacimiento').value = '';
+    document.getElementById('consultaCorreo').value = '';
+    document.getElementById('consultaCiudadResidencia').value = '';
+    document.getElementById('consultaCiudadOrigen').value = '';
+    document.getElementById('consultaArtista').value = '';
+    document.getElementById('consultaTituloCancion1').value = '';
+    document.getElementById('consultaTituloCancion2').value = '';
+    document.getElementById('consultaTituloCancion3').value = '';
+
 }
+
+function consultarPersona(){
+    let posicion = document.getElementById('posicion').value;
+    let persona = personas[posicion-1];
+    document.getElementById('consultaNombre').innerHTML = persona.nombre;
+    document.getElementById('consultaCedula').innerHTML = persona.cedula;
+    document.getElementById('consultaFechaNacimiento').innerHTML = persona.fechaNacimiento;
+    document.getElementById('consultaCorreo').innerHTML = persona.correo;
+    document.getElementById('consultaCiudadResidencia').innerHTML = persona.ciudadResidencia;
+    document.getElementById('consultaCiudadOrigen').innerHTML = persona.ciudadOrigen;
+    document.getElementById('consultaArtista').innerHTML = persona.artista;
+    document.getElementById('consultaTituloCancion1').innerHTML = persona.tituloCancion1;
+    document.getElementById('consultaTituloCancion2').innerHTML = persona.tituloCancion2;
+    document.getElementById('consultaTituloCancion3').innerHTML = persona.tituloCancion3;
+}
+

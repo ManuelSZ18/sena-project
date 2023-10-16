@@ -159,44 +159,7 @@ td {
     color: #f00;
 }
 
-#Q4 .containerMenu{
-    display: grid;
-    grid-template-columns: 1fr 4fr 4fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 10px;
-    margin: 10px;
-    padding: 10px;
-    background-color: #fff;
-}
-
-.menuSelection #agregarPersona{
-    margin-bottom: 30px;
-}
-
-form{
-    grid-column: 2/3;
-    grid-row: 1/3;
-    display: flex;
-    justify-content: top;
-    flex-direction: column;
-    margin: 10px;
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 0 1px 2px rgba(0,0,0,.1);
-    border: 1px double #000000;
-}
-.menuRegistro #registrar{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    height: 30px;
-}
-
-.menuConsulta{
-    grid-column: 2/3;
-    grid-row: 1/3;
-    display: none;
-    justify-content: top;
-    flex-direction: column;
+#Q4{
     margin: 10px;
     padding: 10px;
     background-color: #fff;
@@ -204,13 +167,95 @@ form{
     border: 1px double #000000;
 }
 
-.menuRegistro{
-    display: none;
+#Q4 table{
+    margin: 0 auto;
+    width: 55%;
+    border-collapse: collapse;
+    text-align: left;
 }
 
-.menuRegistro #registrar{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    height: 30px;
+#Q4 table span{
+    color: rgb(255, 255, 255);
 }
 
+#Q4 table th{
+    color: #fff;
+    background-color: #274666;
+    font-size: 16px;
+    font-weight: 500;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #000000;
+}
+
+#Q4 table th p{
+    margin: 0;
+    padding: 0;
+    display: inline;
+    margin-left: 150px;
+}
+
+#Q4 table td {
+    width: 50%;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px;
+    border: 1px solid #000000;
+    background-color: #dddddd;
+}
+
+#Q4 table td input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: center;
+}
+
+#Q4 table td input:focus{
+    outline: none;
+}
+
+#Q4 table td input::placeholder{
+    color: #00000036;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+}
+
+#Q4 table th #registrarPersona{
+    background-color: #97eb97;
+}
+
+#Q4 table th #consultarPersona{
+    background-color: #ebd197;
+}
+
+#consultaPersona h4{
+    font-weight:300;
+}
+
+#consultaPersona h4 p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    margin-left: 10px;
+}
+
+#Q4 table th #limpiarPersona{
+    background-color: #eb9797;
+}
+
+#Q4 table td #insertarPersona{
+    color: #fff;
+    background-color: #078a5a;
+    font-size: 16px;
+    font-weight: 500;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #000000;
+    cursor: pointer;
+    margin-top: 15px;
+}
